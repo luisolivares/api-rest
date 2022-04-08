@@ -35,7 +35,7 @@ public class CajeroController {
         return new ResponseEntity<>(cajeroService.findByCodigo(codigo), HttpStatus.OK);
     }
 
-    @PutMapping(value = "/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/{codigo}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> update(@RequestBody(required = true) CajeroRequest request,
                                          @PathVariable(value = "codigo", required = true) Integer codigo) throws SQLException {
         return new ResponseEntity<>(cajeroService.update(codigo, request), HttpStatus.OK);
