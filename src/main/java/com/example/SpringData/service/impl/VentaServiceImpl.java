@@ -86,7 +86,7 @@ public class VentaServiceImpl implements VentaService {
 
     @Transactional(readOnly = true)
     @Override
-    public Venta findById(Integer codigo) {
+    public Venta findByCodigo(Integer codigo) {
         Optional<Venta> venta = this.ventaRepository.findByCodigo(codigo);
         if(!venta.isPresent()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Venta " + codigo + " not found");

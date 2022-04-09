@@ -42,6 +42,11 @@ public class VentasController {
         return new ResponseEntity<>(ventaService.listAll(pageNo, pageSize), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> findByCodigo(@PathVariable(value = "codigo", required = true) Integer codigo) throws SQLException {
+        return new ResponseEntity<>(ventaService.findByCodigo(codigo), HttpStatus.OK);
+    }
+
     @DeleteMapping(value = "/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> delete(@PathVariable(value = "codigo", required = true) Integer codigo) throws SQLException {
         return new ResponseEntity<>(ventaService.delete(codigo), HttpStatus.NO_CONTENT);

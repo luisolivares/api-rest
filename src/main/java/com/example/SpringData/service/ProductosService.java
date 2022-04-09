@@ -11,7 +11,7 @@ public interface ProductosService {
 
     public Productos update(Integer id, ProductosRequest productosRequest);
 
-    public Productos findById(Integer id);
+    public Productos findByCodigo(Integer id);
 
     public boolean delete(Integer id);
 

@@ -11,7 +11,7 @@ public interface VentaService {
 
     public Venta update(Integer codigo, VentaRequest ventaRequest);
 
-    public Venta findById(Integer codigo);
+    public Venta findByCodigo(Integer codigo);
 
     public boolean delete(Integer codigo);
 

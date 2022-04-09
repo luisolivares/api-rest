@@ -11,7 +11,7 @@ public interface MaquinaRegistradoraService {
 
     public MaquinaRegistradora update(Integer id, MaquinaRegistradoraRequest maquinaRegistradoraRequest);
 
-    public MaquinaRegistradora findById(Integer codigo);
+    public MaquinaRegistradora findByCodigo(Integer codigo);
 
     public boolean delete(Integer codigo);
 

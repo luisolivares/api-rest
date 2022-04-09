@@ -63,7 +63,7 @@ public class MaquinaRegistradoraServiceImpl implements MaquinaRegistradoraServic
 
     @Transactional(readOnly = true)
     @Override
-    public MaquinaRegistradora findById(Integer codigo) {
+    public MaquinaRegistradora findByCodigo(Integer codigo) {
         Optional<MaquinaRegistradora> maquinaRegistradora = this.maquinaRegistradoraRepository.findByCodigo(codigo);
         if(!maquinaRegistradora.isPresent()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "MaquinaRegistradora " + codigo + " not found");

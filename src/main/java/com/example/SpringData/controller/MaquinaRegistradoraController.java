@@ -42,6 +42,11 @@ public class MaquinaRegistradoraController {
         return new ResponseEntity<>(maquinaRegistradoraService.listAll(pageNo, pageSize), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> findByCodigo(@PathVariable(value = "codigo", required = true) Integer codigo) throws SQLException {
+        return new ResponseEntity<>(maquinaRegistradoraService.findByCodigo(codigo), HttpStatus.OK);
+    }
+
     @DeleteMapping(value = "/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> delete(@PathVariable(value = "codigo", required = true) Integer codigo) throws SQLException {
         return new ResponseEntity<>(maquinaRegistradoraService.delete(codigo), HttpStatus.NO_CONTENT);

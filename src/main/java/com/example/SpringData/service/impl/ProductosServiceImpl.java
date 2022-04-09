@@ -66,7 +66,7 @@ public class ProductosServiceImpl implements ProductosService {
 
     @Transactional(readOnly = true)
     @Override
-    public Productos findById(Integer codigo) {
+    public Productos findByCodigo(Integer codigo) {
         Optional<Productos> productos = this.productosRepository.findByCodigo(codigo);
         if(!productos.isPresent()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Productos " + codigo + " not found");

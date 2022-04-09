@@ -36,6 +36,11 @@ public class ProductosController {
         return new ResponseEntity<>(productosService.update(codigo, request), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> findByCodigo(@PathVariable(value = "codigo", required = true) Integer codigo) throws SQLException {
+        return new ResponseEntity<>(productosService.findByCodigo(codigo), HttpStatus.OK);
+    }
+
     @GetMapping(value = "/{pageNo}/{pageSize}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> findAll(@PathVariable("pageNo") Integer pageNo,
                                           @PathVariable("pageSize") Integer pageSize) {
